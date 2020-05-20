@@ -1,1 +1,21 @@
-<p>content works!</p>
+<mat-spinner class="spinner" *ngIf="loadingContent"></mat-spinner>
+<main *ngIf="!loadingContent">
+  <div class="filter">
+    <app-filter class="app-filter" (filtersToContent)='onApplyFilter($event)'></app-filter>
+    <span class="line--filter"></span>
+  </div>
+  <div class="coctails-type--list">
+    <div class="coctail-type" *ngFor="let category of categoryes">
+      <div class="header">
+        <p class="header--text">{{category.category_name}}</p>
+        <span class="line"></span>
+      </div>
+      <div class="coctails--list">
+        <div class="coctail" *ngFor="let drinck of category.drinks">
+          <img class="img" [src]='drinck.strDrinkThumb' [alt]='drinck.strDrink'>
+          <p class="coclail-name">{{drinck.strDrink}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,143 @@
+@import "./../scss-helpers/_mixins.scss";
+
+main{
+  display: flex;
+  height: calc(100% - 70px);
+}
+
+.coctails-type--list{
+  padding-top: 37px;
+  margin-top: 3px;
+  width: 100%;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: #fdfeff;
+    mix-blend-mode: normal;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #818181;
+    border-radius: 2px;
+  }
+}
+
+.header{
+  margin: 0 4% 0 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header--text{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #818181;
+  margin-bottom: 10px;
+}
+
+.line{
+  border-top: 1px solid #D0D0D0;
+}
+.line--filter{
+  border-right: 1px solid #D0D0D0;
+}
+
+.coctails--list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.img{
+  width: 150px;
+}
+
+.coctail{
+  width: 20%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.coclail-name{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  color: #000000;
+  margin-top: 20px;
+}
+
+.filter{
+  display: flex;
+}
+
+.spinner{
+  margin-left: 46%;
+  margin-top: 5%;
+}
+
+@include for-desktop-up{
+  .coctail{
+    width: 25%;
+  }
+  .img{
+    width: 135px;
+  }
+};
+
+@include for-tablet-landscape-up{
+  .coctail{
+    width: 33.33%;
+    margin-bottom: 35px;
+  }
+  .img{
+    width: 125px;
+  }
+  .coclail-name{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@include for-tablet{
+  .coctail{
+    width: 33.33%;
+  }
+  .img{
+    width: 125px;
+  }
+  main{
+    flex-direction: column;
+  }
+  .app-filter{
+    width: 100%;
+  }
+}
+
+@include for-phone-only{
+  .coctail{
+    width: 50%;
+  }
+}
+
+@include for-mini-phone{
+  .coctail{
+    width: 50%;
+    margin-bottom: 25px;
+  }
+  .img{
+    width: 100px;
+  }
+  .coclail-name{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+

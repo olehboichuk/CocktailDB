@@ -1,1 +1,16 @@
-<p>filter works!</p>
+<div [ngClass]="{'hamburger hamburger--squeeze': true, 'is-active':isActive}" (click)="hamburger()">
+  <div class="hamburger-box">
+    <div class="hamburger-inner"></div>
+  </div>
+</div>
+<main [ngClass]="{'active':isActive}">
+  <div class="checkbox-list">
+    <div class="checkbox" *ngFor="let filter of filters">
+      <label class="container">{{filter.strCategory}}
+        <input type="checkbox" (change)="onChanged(filter)" [checked]="filter.chacked">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <button class="apply__btn" type="button" (click)="onClick()">apply</button>
+</main>
